@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/common}">
+<head>
+<meta charset="UTF-8">
+<title>ブログ一覧</title>
+</head>
+<body>
+<div layout:fragment="content">
+<div th:object="${person}">
+	<h1 th:text="*{name*"></h1>
+</div>
+</div>
+</body>
+</html>
