@@ -37,9 +37,15 @@
 </div>
 	<div>
 		投稿記事
-		<ul>
+		<ul sec:authorize="!isAuthenticated()">
 			<li class="item-text" th:each="blog:${person.blogs}" th:object="${blog}">
-			<a th:href="@{|/blog/*{blog.id}|}"><span th:text="*{title}"></span></a><br>
+			<a th:href="@{|/blog/*{id}|}"><span th:text="*{title}"></span></a><br>
+			<span th:text="*{contents}"></span>
+			</li>
+		</ul>
+		<ul sec:authorize="isAuthenticated()">
+			<li class="item-text" th:each="blog:${person.blogs}" th:object="${blog}">
+			<a th:href="@{|/person/blog/*{id}|}"><span th:text="*{title}"></span></a><br>
 			<span th:text="*{contents}"></span>
 			</li>
 		</ul>
