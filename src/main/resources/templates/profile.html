@@ -39,7 +39,7 @@
 		投稿記事
 		<ul>
 			<li class="item-text" th:each="blog:${person.blogs}" th:object="${blog}">
-			<span th:text="*{title}"></span><br>
+			<a th:href="@{|/blog/*{blog.id}|}"><span th:text="*{title}"></span></a><br>
 			<span th:text="*{contents}"></span>
 			</li>
 		</ul>
