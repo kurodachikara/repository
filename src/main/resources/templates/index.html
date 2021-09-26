@@ -10,6 +10,11 @@
 </head>
 <body>
 <div layout:fragment="content">
+<form action="/search" method="get">
+	記事検索
+	<input type="text" name="word" th:value="${param.word}">
+	<input type="submit" value="表示">
+</form>
 <main>
 <ul class="wrapper grid">
 	<li class="item" th:each="blog:${blogs}" th:object="${blog}">
