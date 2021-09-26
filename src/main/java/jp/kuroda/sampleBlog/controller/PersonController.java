@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import jp.kuroda.sampleBlog.model.Blog;
 import jp.kuroda.sampleBlog.model.Comment;
@@ -44,6 +45,13 @@ public class PersonController {
 		List<Blog> blogs=blogService.getBlogList();
 		model.addAttribute("blogs",blogs);
 		return "person/index";
+	}
+	//記事検索
+	@GetMapping("/search")
+	public String search(@RequestParam String word,Model model) {
+		List<Blog> blogs=blogService.getBlogList(word);
+		model.addAttribute("blogs",blogs);
+		return"person/index";
 	}
 	
 	//プロフィール編集
