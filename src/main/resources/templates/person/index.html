@@ -17,9 +17,9 @@
 			<a class="tag" href="/person/edit">プロフィール編集</a>
 		</div>
 	</div>
-	<form action="/person/search" method="get">
+	<form class="search" action="/person/search" method="get">
 		記事検索
-		<input type="text" name="word" th:value="${param.word}">
+		<input class="searchText" type="text" name="word" th:value="${param.word}">
 		<input type="submit" value="表示">
 	</form>
 	<ul class="wrapper grid">

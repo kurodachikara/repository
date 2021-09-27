@@ -119,6 +119,16 @@ input[type="submit"]:hover{
 	color: #fff;
 }
 
+/*記事検索機能*/
+.search{
+	margin: 3%;
+	text-align: left;
+	margin-left: 15%;
+}
+.searchText{
+	margin: auto 2%;
+}
+
 /*作成・編集機能*/
 .container{
 	display: flex;
